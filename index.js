@@ -44,7 +44,7 @@ class CountdownTimer {
 };
 
 function upgradeTimerElements(selector, { days, hours, mins, secs }) {
-  timerEl.id = selector;
+  timerEl.id = selector.slice(1);
   daysEl.textContent = days;
   hoursEl.textContent = hours;
   minsEl.textContent = mins;
@@ -53,8 +53,8 @@ function upgradeTimerElements(selector, { days, hours, mins, secs }) {
 
 const timer = new CountdownTimer({
   onTick: upgradeTimerElements,
-  selector: 'timer-1',
-  targetDate: new Date('May 26, 2021'),
+  selector: '#timer-1',
+  targetDate: new Date('May 31, 2021'),
 });
 
 timer.start();
